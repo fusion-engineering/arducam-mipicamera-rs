@@ -174,8 +174,8 @@ impl Buffer {
     }
 
     /// Mutable access to the raw [`Buffer`][c::Buffer] structure.
-    pub fn raw_buffer_mut(&mut self) -> &mut c::Buffer {
-        unsafe { &mut *self.ptr }
+    pub unsafe fn raw_buffer_mut(&mut self) -> &mut c::Buffer {
+        &mut *self.ptr
     }
 
     /// The raw pointer to the [`Buffer`][c::Buffer] structure, as used by the C interface.
