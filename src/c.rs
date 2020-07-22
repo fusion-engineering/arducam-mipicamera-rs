@@ -128,16 +128,17 @@ pub struct VideoEncoderState {
 #[derive(Debug, Copy, Clone)]
 pub struct Buffer {
     priv_: *mut c_void,
+    /// Pointer to the bytes.
     pub data: *mut u8,
-    /// Allocated size in bytes of payload buffer
+    /// Allocated size in bytes.
     pub alloc_size: u32,
-    /// Number of bytes currently used in the payload buffer (starting from offset)
+    /// Number of bytes currently used (starting from offset).
     pub length: u32,
-    /// Flags describing properties of a buffer header (see `bufferheaderflags`)
+    /// Flags describing properties of the buffer.
     pub flags: u32,
     /// Presentation timestamp in microseconds.
     ///
-    /// `TIME_UNKNOWN` is used when the pts is unknown.
+    /// [`TIME_UNKNOWN`] is used when the pts is unknown.
     pub pts: i64,
     /// Field reserved for use by the client
     pub userdata: *mut c_void,
