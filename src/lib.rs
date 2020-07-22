@@ -18,6 +18,16 @@ pub use c::CameraInterface;
 pub use c::Format;
 pub use c::Fract;
 
+// TODO: Wrap Format struct:
+//   pub struct Format {
+//       mode: i32,
+//       width: i32,
+//       height: i32,
+//       pixel_format: ???,
+//       frame_intervals: ???,
+//       description: &'static CStr,
+//   }
+
 /// Image encoding format.
 #[derive(Debug, Copy, Clone, PartialEq, Eq)]
 #[repr(u32)]
@@ -128,7 +138,7 @@ impl Camera {
         self.ptr
     }
 
-    // To do:
+    // TODO:
     //  - start_preview
     //  - stop_preview
     //  - set_video_callback
