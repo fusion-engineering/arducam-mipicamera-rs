@@ -85,7 +85,7 @@ impl Camera {
             if buffer.is_null() {
                 return Err(());
             }
-            Ok(Buffer { ptr: buffer })
+            Ok(Buffer::from_raw_pointer(buffer))
         }
     }
 
@@ -181,6 +181,13 @@ impl Buffer {
     /// The raw pointer to the [`Buffer`][c::Buffer] structure, as used by the C interface.
     pub fn raw_pointer(&self) -> *mut c::Buffer {
         self.ptr
+    }
+
+    /// Take ownership of a raw [`Buffer`][c::Buffer].
+    ///
+    /// The pointer must be valid and non-null.
+    pub unsafe fn from_raw_pointer(ptr: *mut c::Buffer) -> Self {
+        Self { ptr }
     }
 }
 
