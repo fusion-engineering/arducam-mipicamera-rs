@@ -127,7 +127,7 @@ pub struct VideoEncoderState {
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct Buffer {
-    priv_: *mut c_void,
+    pub private: *mut c_void,
     /// Pointer to the bytes.
     pub data: *mut u8,
     /// Allocated size in bytes.
@@ -160,7 +160,7 @@ pub struct Format {
     pub pixelformat: u32,
     pub frameintervals: Fract,
     pub description: *const c_char,
-    reserved: [u32; 4],
+    pub reserved: [u32; 4],
 }
 
 #[repr(C)]
