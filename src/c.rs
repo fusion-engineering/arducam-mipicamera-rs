@@ -67,6 +67,9 @@ pub const V4L2_CTRL_CLASS_USER: u32 = 9961472;
 pub const V4L2_CID_BASE: u32 = 9963776;
 pub const V4L2_CID_ARDUCAM_BASE: u32 = 9967872;
 pub const V4L2_CID_ARDUCAM_EXT_TRI: u32 = 9967873;
+pub const V4L2_CID_VFLIP: u32 = 9963797;
+pub const V4L2_CID_HFLIP: u32 = 9963796;
+pub const V4L2_CID_GAIN: u32 = 9963795;
 
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
