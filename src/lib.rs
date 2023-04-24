@@ -133,6 +133,15 @@ impl Camera {
         }
     }
 
+    pub fn arducam_manual_set_awb_compensation(&mut self, red_gain: i32, blue_gain: i32) {
+        unsafe {
+            c::arducam_manual_set_awb_compensation(
+                red_gain,
+                blue_gain
+            );
+        }
+    }
+
     /// The raw pointer to the camera instance, as used by the C interface.
     pub fn raw_pointer(&self) -> c::CameraInstance {
         self.ptr
@@ -145,7 +154,6 @@ impl Camera {
     //  - set_raw_callback
     //  - get_support_formats
     //  - get_support_controls
-    //  - manual_set_awb_compensation
     //  - read_sensor_reg
     //  - write_sensor_reg
     //  - set_lens_table

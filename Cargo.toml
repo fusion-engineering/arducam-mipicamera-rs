@@ -1,7 +1,7 @@
 [package]
 name = "arducam_mipicamera"
 description = "Rust wrapper for the arducam_mipicamera library."
-version = "0.1.1"
+version = "0.1.2"
 authors = ["Mara Bos <m-ou.se@m-ou.se>"]
 license = "BSD-2-Clause"
 repository = "https://github.com/fusion-engineering/arducam-mipicamera-rs"

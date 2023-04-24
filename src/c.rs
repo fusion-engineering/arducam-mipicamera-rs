@@ -505,5 +505,11 @@ extern "C" {
         height: c_int,
     ) -> *mut Buffer;
 
-    pub fn arducam_manual_set_awb_compensation(r_gain: u32, b_gain: u32);
+    
+
+    ///
+    ///
+    /// 
+    pub fn arducam_manual_set_awb_compensation(r_gain: c_int, b_gain: c_int);
+
 }
